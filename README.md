@@ -41,3 +41,5 @@ SECRET_KEY=your_jwt_secret
 ```bash
 npm start
 ```
+
+## Check API Usage in node-api-postman.json (Postman export)
