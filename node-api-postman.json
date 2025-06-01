@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "35e37a53-a9c0-4789-ae5c-b8a769458b0d",
+		"name": "Local App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23764031"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"shubham\",\r\n    \"email\" : \"shubhamadad@gmail.com\",\r\n    \"password\" : \"sdfsfdsdfs\",\r\n    \"name\" : \"sadfsa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"abhishekkamble369@gmail.com\",\r\n    \"password\" : \"Node@api\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwiZW1haWwiOiJzaHViaGFtYWRhZEBnbWFpbC5jb20ifSwiaWF0IjoxNzQ4NzA0NjczLCJleHAiOjE3NDg3MDY0NzN9.G0ABV8AQMfQDg3GfvBI8tsf0q2MaefcBurVPcmVNiEg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Don Quixote \",\r\n    \"author\" : \"Miguel de Cervantes\",\r\n    \"genre\" : \"novel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwiZW1haWwiOiJzaHViaGFtYWRhZEBnbWFpbC5jb20ifSwiaWF0IjoxNzQ4NzA2NDg0LCJleHAiOjE3NDg3MDgyODR9.6Tx5-Y_tuVF76ftsw0hiP1j6XYTOPmyUNKeVDFbHaZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/books?order=asc&page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "las",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "ada",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "author",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwiZW1haWwiOiJzaHViaGFtYWRhZEBnbWFpbC5jb20ifSwiaWF0IjoxNzQ4NzA2NDg0LCJleHAiOjE3NDg3MDgyODR9.6Tx5-Y_tuVF76ftsw0hiP1j6XYTOPmyUNKeVDFbHaZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/search?author=Ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Ba"
+						},
+						{
+							"key": "genre",
+							"value": "ada",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "author",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwiZW1haWwiOiJzaHViaGFtYWRhZEBnbWFpbC5jb20ifSwiaWF0IjoxNzQ4NzA2NDg0LCJleHAiOjE3NDg3MDgyODR9.6Tx5-Y_tuVF76ftsw0hiP1j6XYTOPmyUNKeVDFbHaZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/books/1?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"books",
+						"1"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwiZW1haWwiOiJzaHViaGFtYWRhZEBnbWFpbC5jb20ifSwiaWF0IjoxNzQ4NzA2NDg0LCJleHAiOjE3NDg3MDgyODR9.6Tx5-Y_tuVF76ftsw0hiP1j6XYTOPmyUNKeVDFbHaZg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\" : \"One of the things that makes Don Quixote such a great book is its humor. Cervantes has a keen sense of humor and a gift for satire, and he uses these talents to great effect in the novel. The book is full of hilarious scenes and witty dialogue that will keep readers laughing from beginning to end.\",\r\n    \"rating\"  : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/books/1/reviews"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Review",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\" : \"This is new review 245415\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/reviews/8"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\" : \"This is new review\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/reviews/2"
+			},
+			"response": []
+		}
+	]
+}
