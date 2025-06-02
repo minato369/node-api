@@ -320,7 +320,7 @@ router.delete('/reviews/:id', authenticate, async (req, res) => {
 			return res.status(401).json({ message: "User not logged in" });
 		}
 
-		const check_review = await db.check_review(review_id, user_id);
+		const check_review = await db.is_review_exsits(review_id, user_id);
 
 		if (!check_review) {
 			return res.json({
